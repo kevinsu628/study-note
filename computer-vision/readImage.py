@@ -56,24 +56,12 @@ def downsampleImage(img):
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
-##############################################################################
-# read from camera
-def video_demo():
-    capture = cv2.VideoCapture(0)  # open camera 0
-    while True:
-        ret, frame = capture.read()
-        frame = cv2.flip(frame, 1)
-        cv2.imshow("video", frame)
-        if cv2.waitKey(10) & 0xFF == ord('q'):
-            break
-
 filename = "./3.jpg"
 img = cv2.imread(filename)
 readImage(img)
 blurredImage(img)
 grayscaleImage(img)
 downsampleImage(img)
-video_demo()
 cv2.destroyAllWindows()
 
 
